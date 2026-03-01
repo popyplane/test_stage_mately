@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import taskRoutes from './routes/taskRoutes.js';
 
 console.log('--- Starting server... ---');
@@ -12,6 +13,7 @@ if (!process.env.MONGO_URI) {
 }
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use('/api', taskRoutes);
 

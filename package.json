@@ -1,0 +1,12 @@
+{
+  "name": "test-stage-mately-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install --prefix back && npm install --prefix front",
+    "dev": "concurrently --kill-others -n \"BACK,FRONT\" -c \"blue,green\" \"npm run dev --prefix back\" \"npm run start --prefix front\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
